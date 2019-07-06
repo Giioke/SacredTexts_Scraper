@@ -13,11 +13,7 @@ WebCode = soup.prettify()
 
 # Find the names and links to the books in the website's menu elements
 topicMenu = soup.find('span', class_='menutext')
-LinksMenu = [soup.find('a', href = True) for links in topicMenu]
-#LinksMenu = LinksMenu.attrs['href']
-
 #print(topicMenu)
-print(LinksMenu)
 
 #Extract topic names
 topicMenu_cut = topicMenu.find_all(string = True)
@@ -27,8 +23,9 @@ titles = list(filter(None, titles))
 #print(titles)
 
 # Extract Links
-
-
+LinksMenu = [soup.find('a', href = True) for links in topicMenu]
+#LinksMenu = LinksMenu.attrs['href']
+print(LinksMenu)
 
 ## Data Structure
 # topics = {
