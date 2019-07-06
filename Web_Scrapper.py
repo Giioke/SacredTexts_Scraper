@@ -7,16 +7,19 @@ url = "http://www.sacred-texts.com/index.htm"
 resp = requests.get(url)
 
 #Ability to read the HTML in python
-soup = BeautifulSoup(resp.text, 'html.parser')
-
+soup = BeautifulSoup(resp.text, 'lxml')
+WebCode = soup.prettify()
+print(WebCode)
 # Find the names and links to the books in the website's menu elements
-topicMenu = soup.select(".menutext")
-
+WebCode2 = soup.find('span', class_='menutext')
+#print(topicMenu)
+WebCode3 = WebCode2.find_all('a')
+print(WebCode3)
 #Extract topic names
 #for topic in topicMenu:
     #print(topic.text.strip())
-stripped_Topicmenu = [topic.text.strip() for topic in topicMenu]
-print(stripped_Topicmenu)
+#stripped_Topicmenu = [topic.text.strip()[297:].split() for topic in topicMenu]
+#print(stripped_Topicmenu)
 
 ## Data Structure
 # topics = {
