@@ -15,7 +15,7 @@ topicMenu = soup.select(".menutext")
 #Extract topic names
 #for topic in topicMenu:
     #print(topic.text.strip())
-stripped_Topicmenu = [topic.text.strip() for topic in topicMenu]
+stripped_Topicmenu = [topic.text.strip().split() for topic in topicMenu]
 print(stripped_Topicmenu)
 
 ## Data Structure
