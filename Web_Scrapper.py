@@ -11,7 +11,23 @@ soup = BeautifulSoup(resp.text, 'html.parser')
 
 # Find the names and links to the books in the website's menu elements
 topicMenu = soup.select(".menutext")
-
+#print(topicMenu[1])
 #Extract topic names
 for topic in topicMenu:
     print(topic.text.strip())
+
+#####
+#Data Structure
+topic = {
+    "topic1": {
+        "descript": "content",
+        "topicLink": "weblink"
+    },
+    "topic2": {
+        "descript": "content",
+        "topicLink": "weblink"
+
+    }
+#Add more topics?
+}
+#####
