@@ -18,7 +18,7 @@ for topic in topicMenu:
 
 #####
 #Data Structure
-topic = {
+topics = {
     "topic1": {
         "descript": "content",
         "topicLink": "weblink"
@@ -31,3 +31,11 @@ topic = {
 #Add more topics?
 }
 #####
+
+#For-Loop each topic displays their name, description, and the link.
+for topicname, topicinfo in topics.items():
+    print("\n")
+    print(topicname)
+    print(topicinfo['descript'])
+    print(topicinfo['topicLink'])
+    print("\n")
