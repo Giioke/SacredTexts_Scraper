@@ -9,7 +9,7 @@ resp = requests.get(url)
 #Ability to read the HTML in python
 soup = BeautifulSoup(resp.text, 'lxml')
 WebCode = soup.prettify()
-#print(WebCode)
+print(WebCode)
 
 # Find the names and links to the books in the website's menu elements
 topicMenu = soup.find('span', class_='menutext')
@@ -25,7 +25,7 @@ titles = list(filter(None, titles))
 # Extract Links
 LinksMenu = [soup.find('a', href = True) for links in topicMenu]
 #LinksMenu = LinksMenu.attrs['href']
-print(LinksMenu)
+#print(LinksMenu)
 
 ## Data Structure
 # topics = {
